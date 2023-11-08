@@ -1,0 +1,156 @@
+<!doctype html>
+
+<html lang=“en-US”>
+<head>
+<link rel="stylesheet" href="tiktaktoestyles.css" />
+<meta charset=“utf-8”/>
+<title> My Tik Tak Toe
+</title>
+</head>
+<body class="background">
+<div class="title-box">
+<h1 class="title">
+Let's Play
+</h1>
+</div>
+
+<div class="large-box">
+<div class="left-box-top", id="box">
+</div>
+
+<div class="top-box", id="box">
+</div>
+
+<div class="right-top-box", id="box"> 
+</div>
+
+<div class="left-center-box", id="box">
+</div>
+
+<div class="center-box", id="box">
+</div>
+
+<div class="right-center-box", id="box">
+</div>
+
+<div class="left-bottom-box", id="box">
+</div>
+
+<div class="bottom-box", id="box">
+</div>
+
+<div class="right-bottom-box", id="box">
+</div>
+
+</div>
+
+<script>
+  // Your JavaScript goes here
+// X/O - hidden elements on every square 
+// if element is clicked on - X/O appear - disable element 
+// every first click - X
+// every second click - O 
+// when the row - 3 elements match - game over - win - restart - hide elements
+// loop through the body DIV and remove elements with class X and O (remove child)
+use querySelectorAll();
+//add button reset
+
+//1 - create an element O in every box as a child, add animation - appear,
+ class O will have same properties applied to all elements with this class, will be hidden
+ // create a simple funciton to display on click
+ // option 1a create an elelent on click
+ //delete an element on reset
+ //can css be written for an element that is not created yet?
+
+ //NOW create an X element and CSS for it and write code that creates this element on click
+
+
+
+ const leftBoxTop = document.querySelector('.left-box-top');
+ const topBox = document.querySelector('.top-box');
+ const rightTopBox = document.querySelector('.right-top-box');
+ const leftCenterBox = document.querySelector('.left-center-box');
+ const centerBox = document.querySelector('.center-box');
+ const rightCenterBox = document.querySelector('.right-center-box');
+ const leftBottomBox = document.querySelector('.left-bottom-box');
+ const bottomBox = document.querySelector('.bottom-box');
+ const rightBottomBox = document.querySelector('.right-bottom-box');
+
+const allBoxes = [leftBoxTop, topBox, rightTopBox, leftCenterBox, centerBox, rightCenterBox, leftBottomBox, bottomBox, rightBottomBox];
+
+flag = 1;
+if(flag == 1){
+for (const box of allBoxes) {
+  box.addEventListener(
+    "click",
+    (e) => {
+      const x = document.createElement("div");
+      x.classList.add("X");
+      box.appendChild(x);
+      box.style.pointerEvents = 'none'; //='auto' to enable
+      flag=0;
+    },
+    false,
+  );
+}
+}else{
+for (const box of allBoxes) {
+  box.addEventListener(
+    "click",
+    (e) => {
+      const o = document.createElement("div");
+      o.classList.add("O");
+      box.appendChild(o);
+      box.style.pointerEvents = 'none'; //='auto' to enable
+      flag=1;
+    },
+    false,
+  );
+}
+}
+
+
+//if (user one = x){ (createX)}, else user two = o (create o)
+
+//function clickButton() {
+            click_event = new CustomEvent('click');
+            btn_element = document.querySelector('#box');
+            btn_element.dispatchEvent(click_event);
+        }
+
+function createX(){
+ const x = document.createElement("div");
+ x.classList.add("X");
+ bottomBox.appendChild(x);
+ bottomBox.style.pointerEvents = 'none'; //='auto' to enable
+ }
+
+ bottomBox.addEventListener("click", createX);
+
+
+// BELOW loop youll need for deleting elements
+ const leftBoxTop = document.querySelector('.left-box-top');
+ const topBox = document.querySelector('.top-box');
+ const rightTopBox = document.querySelector('.right-top-box');
+ const leftCenterBox = document.querySelector('.left-center-box');
+ const centerBox = document.querySelector('.center-box');
+ const rightCenterBox = document.querySelector('.right-center-box');
+ const leftBottomBox = document.querySelector('.left-bottom-box');
+ const bottomBox = document.querySelector('.bottom-box');
+ const rightBottomBox = document.querySelector('.right-bottom-box');
+
+ const allBoxes = [leftBoxTop, topBox, rightTopBox, leftCenterBox, centerBox, rightCenterBox, leftBottomBox, bottomBox, rightBottomBox];
+
+ for(const box of allBoxes){
+// const x = document.createElement("div");
+// x.classList.add("X");
+// box.appendChild(x);
+ box.style.pointerEvents = 'auto';
+ }
+
+
+}
+</script>
+
+</body>
+</html>
